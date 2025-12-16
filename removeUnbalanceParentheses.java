@@ -1,6 +1,7 @@
 /******************************************************************************
 removeUnbalanceParentheses
-
+Example: ((((ab)) -> ((ab))
+((a*b)((c*d)) -> (a*b)((c*d))
 
 Initialize:
   Stack for '(' indexes
