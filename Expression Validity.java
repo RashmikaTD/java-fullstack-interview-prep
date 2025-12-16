@@ -1,9 +1,35 @@
-/*
+/************************************************************************************************************************************
+
 We need to check if the given expression is valid or not
 Example:
 (a+b)(a*b) -> Valid
 (ab)(ab*) -> Invalid
-*/
+
+Initialize:
+  Stack<Character> stack
+  char preCh = ' '
+  │
+  ▼
+For each character ch in input:
+  ├─ If ch is '(', '{', '[' → push onto stack
+  ├─ Else if ch is ')' → 
+  │     ├─ If stack is empty → Invalid
+  │     ├─ If preCh is '(', '+', '-', '*', '/' → Invalid
+  │     └─ Else → pop from stack
+  ├─ Else if ch is operator ('+', '-', '*', '/') → 
+  │     ├─ If preCh is '(', operator, or space → Invalid
+  │
+  └─ Update preCh = ch
+  │
+  ▼
+After loop:
+  ├─ If stack is not empty → Invalid
+  └─ If last character is operator → Invalid
+  │
+  ▼
+Return Valid / Invalid
+
+************************************************************************************************************************************/
 
 import java.util.*;
 public class Main
