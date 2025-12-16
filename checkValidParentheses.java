@@ -1,3 +1,38 @@
+/*
+Valid Parentheses
+Example:
+(a+b)*(c+d) -> Valid
+(a+b*(c-d) -> Invalid
+[{()}] -> Valid
+[{(})] -> Invalid
+
+
+Initialize: Stack<Character> stack
+  │
+  ▼
+For each character ch in input:
+  ├─ If ch is '(', '{', '[' → push onto stack
+  ├─ Else if ch is ')':
+  │     ├─ If stack is empty → Invalid
+  │     ├─ If stack.peek() != '(' → Invalid
+  │     └─ Else → pop from stack
+  ├─ Else if ch is '}':
+  │     ├─ If stack is empty → Invalid
+  │     ├─ If stack.peek() != '{' → Invalid
+  │     └─ Else → pop from stack
+  ├─ Else if ch is ']':
+  │     ├─ If stack is empty → Invalid
+  │     ├─ If stack.peek() != '[' → Invalid
+  │     └─ Else → pop from stack
+  │
+  ▼
+After loop:
+  ├─ If stack is empty → Valid
+  └─ Else → Invalid
+  
+*/
+
+
 import java.util.*;
 public class Main
 {
